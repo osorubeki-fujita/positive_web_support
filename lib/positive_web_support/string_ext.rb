@@ -12,11 +12,15 @@ module PositiveWebSupport::StringExt
   # @return [Boolean]
   def is_web_color?( with_sharp: nil )
     raise "Error" unless with_sharp.nil? or with_sharp.boolean?
-    if with_sharp.nil? # nil
+    
+    # nil
+    if with_sharp.nil?
       is_web_color_without_sharp? or is_web_color_with_sharp?
-    elsif with_sharp # true
+    # true
+    elsif with_sharp
       is_web_color_with_sharp?
-    else # false
+    # false
+    else
       is_web_color_without_sharp?
     end
   end
@@ -49,7 +53,7 @@ module PositiveWebSupport::StringExt
   # @return [Boolean]
   def is_web_color_with_sharp?
     if /\A\#(.+)\Z/ =~ self
-      $1.is_web_color_without_sharp?
+      $1.is_web_color?( with_sharp: false )
     else
       false
     end
