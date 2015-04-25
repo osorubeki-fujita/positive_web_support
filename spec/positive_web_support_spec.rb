@@ -1,8 +1,13 @@
 require 'spec_helper'
+require 'deployer'
+
+spec_filename = ::File.expand_path( ::File.dirname( __FILE__ ) )
+version = "0.1.3"
 
 describe PositiveWebSupport do
-  it 'has a version number' do
-    expect(PositiveWebSupport::VERSION).not_to be nil
+  it "has a version number \'#{ version }\'" do
+    expect( PositiveWebSupport::VERSION ).to eq( version )
+    expect( ::Deployer.version_check( PositiveWebSupport::VERSION , spec_filename ) ).to eq( true )
   end
 
   it 'has a method \#is_web_color?, that decide whether a string means web color or not.' do
