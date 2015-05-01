@@ -31,8 +31,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec"
 
   spec.add_development_dependency "capistrano"
-  spec.add_development_dependency "deplo", ">= 0.1.2"
+  spec.add_development_dependency "deplo", ">= 0.1.4"
 
   spec.add_runtime_dependency "activesupport" , ">= 4.2.1"
-  spec.add_runtime_dependency "positive_support" , ">= 0.2.4"
+  spec.add_runtime_dependency "positive_basic_support" , ">= 0.1.1"
 end
