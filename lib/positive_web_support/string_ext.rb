@@ -12,7 +12,7 @@ module PositiveWebSupport::StringExt
   # @return [Boolean]
   def is_web_color?( with_sharp: nil )
     raise "Error" unless with_sharp.nil? or with_sharp.boolean?
-    
+
     # nil
     if with_sharp.nil?
       is_web_color_without_sharp? or is_web_color_with_sharp?
