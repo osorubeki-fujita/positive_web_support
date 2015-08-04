@@ -5,6 +5,8 @@ require "active_support/core_ext"
 require "positive_basic_support"
 
 require "positive_web_support/string_ext"
+require "positive_web_support/date_ext"
+
 require 'date'
 
 module PositiveWebSupport
